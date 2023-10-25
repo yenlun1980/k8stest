@@ -1,0 +1,19 @@
+name: Hello Action
+
+on:
+  push:
+    branches: 
+      - main
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Print hello message
+        run: echo "Hello Github Action"
+
+      - name: Get latest commit SHA
+        run: echo "The latest commit SHA is ${GITHUB_SHA}."
